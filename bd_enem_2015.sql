@@ -7,9 +7,9 @@
 --------------------------------------------------------------------------------------------------------------
 -- Database e tabase criados no servidor. Data Criação: 22/06/2016
 
-CREATE DATABASE bd_enem_dados_2014
-CREATE TABLESPACE tablespace_enem_2014 LOCATION '/mnt/data/base_enem';
-ALTER DATABASE bd_enem_dados_2014 SET TABLESPACE tablespace_enem_2014; 
+CREATE DATABASE bd_enem_dados_2015
+CREATE TABLESPACE tablespace_enem_2015 LOCATION '/mnt/data/base_enem';
+ALTER DATABASE bd_enem_dados_2015 SET TABLESPACE tablespace_enem_2015; 
 
 --------------------------------------------------------------------------------------------------------------
 -- Tabela criada no servidor. DATA CRIAÇÃO: 22/06/2016
