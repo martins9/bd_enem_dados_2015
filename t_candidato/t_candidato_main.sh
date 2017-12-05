@@ -2,6 +2,12 @@
 
 python t_candidato_2015.py
 
+# Colocando null
+
+sed 's/,,/,null,/g' t_candidato_2015_1.csv > t_candidato_2015_2.csv
+
+
+: '
 # Achando o caminho
 path1=$(pwd)
 
@@ -30,3 +36,4 @@ done
 # Pegando data e hora
 data1=$(date "+%d/%m/%Y %H:%M:%S")
 echo
+'
