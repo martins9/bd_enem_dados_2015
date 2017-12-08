@@ -6,9 +6,11 @@ function split_arquivo() {
 
     count=`wc -l $1 | awk '{print $1}'`
 
-    count1=21
-    string="Soma: "
-
-
-    echo $(($count+$count1))
+    if [ "$count" -ge 10 ] && [ "$count" -lt 15 ]; then
+    	echo ">=10 and <=115"
+    elif [ "$count" -ge 16 ] && [ "$count" -lt 20 ]; then
+    	echo ">=16 and <=20"
+    elif [ "$count" -ge 21 ]; then
+    	echo ">=21"
+    fi
 }

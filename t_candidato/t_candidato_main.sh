@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 
-python t_candidato_2015.py
+#python t_candidato_2015.py
 
 # Colocando null
+#sed 's/,,/,null,/g' t_candidato_2015_1.csv > t_candidato_2015_2.csv
 
-sed 's/,,/,null,/g' t_candidato_2015_1.csv > t_candidato_2015_2.csv
+# Chamando arquivo da funcao
+source ./t_func_split.sh
 
+# Passando o arquivo
+nome_arquivo=t_candidato_2015.py
+
+# Chamando a funcao
+split_arquivo $nome_arquivo
 
 : '
 # Achando o caminho
