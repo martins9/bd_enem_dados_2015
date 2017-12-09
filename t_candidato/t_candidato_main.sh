@@ -5,21 +5,17 @@
 # Colocando null
 #sed 's/,,/,null,/g' t_candidato_2015_1.csv > t_candidato_2015_2.csv
 
+path1=$(pwd)
+
 # Chamando arquivo da funcao
-source ./t_func_split.sh
-
-# Passando o arquivo
-nome_arquivo=t_candidato_2015.py
-
-# Chamando a funcao
-split_arquivo $nome_arquivo
+source ./t_func_split.sh && nome_arquivo=t_candidato_2015.py && split_arquivo $nome_arquivo $path1
 
 : '
 # Achando o caminho
-path1=$(pwd)
+
 
 # Fazendo split dos arquivos e colocando
-split -d -a6 -l 30000000 --additional-suffix=.csv t_responde_2014_2.csv $path1/t_responde_base/t_responde_2014_
+
 
 # Excluindo os arquivos de base
 rm t_responde_2014_2.csv
