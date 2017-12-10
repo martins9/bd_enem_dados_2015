@@ -12,15 +12,9 @@ path1=$(pwd)
 cd ..
 
 # Chamando a funcao split
-source ./t_funcoes_shell/t_func_split.sh && nome_arquivo=$path1/microdados_enem_2015_1.csv && pasta=t_candidato_2015 \
-&& split_arquivo $nome_arquivo $path1 $pasta
+source ./t_funcoes_shell/t_func_split.sh && arq_original=$path1/microdados_enem_2015_1.csv && pasta=t_candidato_2015 \
+&& arq_final=t_candidato_2015_ && split_arquivo $arq_original $path1 $pasta $arq_final
 
-: '
-# Fazendo split dos arquivos e colocando
-
-
-# Excluindo os arquivos de base
-rm t_responde_2014_2.csv
-
-
-'
+# Fazendo o load para a tabela
+sorce ./t_funcoes_shell/t_func_load.sh && pasta=t_candidato_2015 && nome_tabela=t_candidato && arq_final=t_candidato_2015_ \
+&& load_tabela
