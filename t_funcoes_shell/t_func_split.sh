@@ -8,6 +8,8 @@ function split_arquivo() {
 
     count=`wc -l $1 | awk '{print $1}'`
 
+    echo $count
+
     if [ "$count" -lt 10000000 ]; then
     	split -d -a6 -l 1000000 --additional-suffix=.csv $1 $2/$3/t_responde_2015_
     elif [ "$count" -ge 10000001 ] && [ "$count" -lt 20000000 ]; then

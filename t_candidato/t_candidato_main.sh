@@ -6,13 +6,16 @@
 #sed 's/,,/,null,/g' t_candidato_2015_1.csv > t_candidato_2015_2.csv
 
 # Achando o caminho
-path1=$(pwd)
 
-# Chamando arquivo da funcao
-source ./t_func_split.sh && nome_arquivo=microdados_enem_2015_1.csv && pasta=t_candidato_2015 && split_arquivo \
-$nome_arquivo $path1 $pasta
+path1=$(pwd)
+echo $path1
 
 : '
+# Chamando arquivo da funcao
+source $path2/t_func_split.sh && nome_arquivo=microdados_enem_2015_1.csv && pasta=t_candidato_2015 \
+&& split_arquivo $nome_arquivo $path1 $pasta
+
+
 # Fazendo split dos arquivos e colocando
 
 
