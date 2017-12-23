@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 
 from t_funcoes.script_limpeza import trocar_sigla,tirar_duas_virgulas
+from t_funcoes.script_estrutura import deletar_arquivo
 
 arquivoentrada = open('microdados_enem_2015.csv', 'r')
 arquivosaida = open('t_municipio_2015.csv', 'w')
 
+# Extraindo os dados do csv de acordo com a planilha de dicionario de dados
 for linha in arquivoentrada:
     texto = linha.split(",")
 
@@ -16,8 +18,15 @@ for linha in arquivoentrada:
 arquivoentrada.close()
 arquivosaida.close()
 
+# Chamando a "funcao tirar_duas_virgulas"
 arquivo='t_municipio_2015.csv'
 tirar_duas_virgulas(arquivo)
 
-#trocar_sigla(arquivo)
+# Chamando a funcao "trocar_sigla"
+arquivo1='t_municipio_2015_1.csv'
+trocar_sigla(arquivo1)
+
+# Deletar arquivo
+deletar_arquivo(arquivo)
+deletar_arquivo(arquivo1)
 

@@ -23,125 +23,121 @@ def deletar_linha_zero(a):
 def trocar_sigla(a):
     try:
         arquivoentrada = open(a, 'r')
-        arquivosaida = open('t_municipio_2015_1.csv', 'w')
+        arquivosaida = open('t_municipio_2015_final.csv', 'w')
 
         for linha in arquivoentrada:
             texto = linha.split(",")
 
-            print texto
+            if 'AC\n' in texto[2]:
+                a = texto[2] = '1'
+                print a
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'AL\n' in texto[2]:
+                a = texto[2] = '2\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'AP\n' in texto[2]:
+                a = texto[2] = '3\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'AM\n' in texto[2]:
+                a = texto[2] = '4\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'BA\n' in texto[2]:
+                a = texto[2] = '5\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'CE\n' in texto[2]:
+                a = texto[2] = '6\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'DF\n' in texto[2]:
+                a = texto[2] = '7\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'ES\n'in texto[2]:
+                a = texto[2] = '8\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'GO\n' in texto[2]:
+                a = texto[2] = '9\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'MA\n' in texto[2]:
+                a = texto[2] = '10\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'MT\n' in texto[2]:
+                a = texto[2] = '11\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'MS\n' in texto[2]:
+                a = texto[2] = '12\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'MG\n' in texto[2]:
+                a = texto[2] = '13\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'PA\n' in texto[2]:
+                a = texto[2] = '14\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'PB\n' in texto[2]:
+                a = texto[2] = '15\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'PR\n' in texto[2]:
+                a = texto[2] = '16\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'PE\n' in texto[2]:
+                a = texto[2] = '17\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'PI\n' in texto[2]:
+                a = texto[2] = '18\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'RJ\n' in texto[2]:
+                a = texto[2] = '19\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'RN\n' in texto[2]:
+                a = texto[2] = '20\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'RS\n' in texto[2]:
+                a = texto[2] = '21\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'RO\n' in texto[2]:
+                a = texto[2] = '22\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'RR\n' in texto[2]:
+                a = texto[2] = '23\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'SC\n' in texto[2]:
+                a = texto[2] = '24\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'SP\n' in texto[2]:
+                a = texto[2] = '25\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'SE\n' in texto[2]:
+                a = texto[2] = '26\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
+            elif 'TO\n' in texto[2]:
+                a = texto[2] = '27\n'
+                b = texto[0] + ',' + texto[1] + ',' + a
+                arquivosaida.writelines(b)
 
-
-        if 'AC\n' in texto[2]:
-            a = texto[2] = '1'
-            print a
-            #b = texto[0] + ',' + texto[1] + ',' + a
-            #arquivosaida.writelines(b)
-        '''
-        elif texto[2] == 'AL\n':
-            a = texto[2] = '2\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'AP\n':
-            a = texto[2] = '3\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'AM\n':
-            a = texto[2] = '4\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'BA\n':
-            a = texto[2] = '5\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'CE\n':
-            a = texto[2] = '6\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'DF\n':
-            a = texto[2] = '7\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'ES\n':
-            a = texto[2] = '8\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'GO\n':
-            a = texto[2] = '9\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'MA\n':
-            a = texto[2] = '10\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'MT\n':
-            a = texto[2] = '11\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'MS\n':
-            a = texto[2] = '12\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'MG\n':
-            a = texto[2] = '13\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'PA\n':
-            a = texto[2] = '14\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'PB\n':
-            a = texto[2] = '15\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'PR\n':
-            a = texto[2] = '16\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'PE\n':
-            a = texto[2] = '17\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'PI\n':
-            a = texto[2] = '18\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'RJ\n':
-            a = texto[2] = '19\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'RN\n':
-            a = texto[2] = '20\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'RS\n':
-            a = texto[2] = '21\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'RO\n':
-            a = texto[2] = '22\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'RR\n':
-            a = texto[2] = '23\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'SC\n':
-            a = texto[2] = '24\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'SP\n':
-            a = texto[2] = '25\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'SE\n':
-            a = texto[2] = '26\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        elif texto[2] == 'TO\n':
-            a = texto[2] = '27\n'
-            b = texto[0] + ',' + texto[1] + ',' + a
-            arquivosaida.writelines(b)
-        '''
         arquivoentrada.close()
         arquivosaida.close()
     except IOError as e:
