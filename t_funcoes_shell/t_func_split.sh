@@ -14,15 +14,9 @@ function split_arquivo() {
     # Regra para fazer o split do arquivo
     if [ "$count" -lt 10000000 ]; then
     	split -d -a6 -l 1000000 --additional-suffix=.csv $1 $2/$3/$4
-    elif [ "$count" -ge 10000001 ] && [ "$count" -lt 20000000 ]; then
-    	split -d -a6 -l 2000000 --additional-suffix=.csv $1 $2/$3/$4
-    elif [ "$count" -ge 20000001 ] && [ "$count" -lt 40000000 ]; then
-        split -d -a6 -l 4000000 --additional-suffix=.csv $1 $2/$3/$4
-    elif [ "$count" -ge 40000001 ] && [ "$count" -lt 70000000 ]; then
+    elif [ "$count" -ge 10000001 ] && [ "$count" -lt 80000000 ]; then
+    	split -d -a6 -l 3000000 --additional-suffix=.csv $1 $2/$3/$4
+    elif [ "$count" -ge 80000001 ]; then
         split -d -a6 -l 5000000 --additional-suffix=.csv $1 $2/$3/$4
-    elif [ "$count" -ge 70000001 ] && [ "$count" -lt 90000000 ]; then
-        split -d -a6 -l 6000000 --additional-suffix=.csv $1 $2/$3/$4
-    elif [ "$count" -ge 90000001 ] && [ "$count" -lt 900000000 ]; then
-        split -d -a6 -l 10000000 --additional-suffix=.csv $1 $2/$3/$4
     fi
 }

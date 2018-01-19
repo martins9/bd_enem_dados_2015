@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from t_funcoes.script_limpeza import trocar_sigla,tirar_duas_virgulas
-from t_funcoes.script_estrutura import deletar_arquivo
+import os
+from script_limpeza import tirar_duas_virgulas, trocar_sigla
 
-arquivoentrada = open('microdados_enem_2015.csv', 'r')
+arquivoentrada = open('microdados_enem_2015_1.csv', 'r')
 arquivosaida = open('t_municipio_2015.csv', 'w')
 
 # Extraindo os dados do csv de acordo com a planilha de dicionario de dados
@@ -27,6 +27,5 @@ arquivo1='t_municipio_2015_1.csv'
 trocar_sigla(arquivo1)
 
 # Deletar arquivo
-deletar_arquivo(arquivo)
-deletar_arquivo(arquivo1)
-
+os.remove(arquivo)
+os.remove(arquivo1)
