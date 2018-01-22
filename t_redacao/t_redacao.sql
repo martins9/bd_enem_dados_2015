@@ -1,1 +1,1 @@
-INSERT INTO REDACAO()
+INSERT INTO REDACAO(sequencial_redacao,ano_redacao,tema) values (2,2015,'O histórico desafio de se valorizar o professor');
