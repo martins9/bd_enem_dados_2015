@@ -9,7 +9,7 @@ function split_arquivo() {
     arq_final=$4
 
     # Contando quantas linhas tem no arquivo
-    count=`wc -l $1 | awk '{print $1}'`
+    count=`wc -l $nome_arquivo | awk '{print $1}'`
 
     # Regra para fazer o split do arquivo
     if [ "$count" -lt 10000000 ]; then
