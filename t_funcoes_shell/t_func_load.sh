@@ -2,31 +2,31 @@
 
 function load_tabela (){
 
- if [ $arquivo_original == "empty" ]; then
+ if [ $arquivo_original == 'empty' ]; then
 
     # Contando quantos arquivos tem na pasta
     QTD_ARQ=$(find $path1/$diretorio/ -type f | wc -l)
 
+    QTD_ARQ1=$((QTD_ARQ-1))
+
     # Data e hora do inicio do processamento
     data=$(date "+%d/%m/%Y %H:%M:%S")
-    echo "------------- START:" $data "-------------" > $nome_tabela_log.txt
+    echo "------------- START:" $data "-------------" > $nome_tabela"_log.txt"
 
-    QTD_ARQ1=$((QTD_ARQ-1))
-    # Fazendo o Load das tabelas
+    # Fazendo Load das tabelas
     for i in $(seq -f "%06g" 0 $QTD_ARQ1)
     do
         # Inserindo o nome do arquivo de load no log.txt
-        echo "t_$nome_tabela_2015_$i.csv" >> $nome_tabela_log.txt
+        echo $diretorio"_"$i >> $nome_tabela"_log.txt"
 
         # Inserindo o tempo que gastou para load no log.txt
-	    time (psql -h localhost -d bd_enem_2015_local -U martins -c "\copy $nome_tabela from $path1/$diretorio/t_$nome_tabela_2015_$i.csv
-	        with delimiter as ',' NULL AS 'null' csv") &>> $nome_tabela_log.txt
+	    time (psql -h localhost -d bd_enem_2015_local -U martins -c "\copy $nome_tabela from $path1/$diretorio/$arquivo_final$i.csv
+	     with delimiter as ',' NULL AS 'null' csv") &>> $nome_tabela"_log.txt"
     done
 
     # Data e hora do fim do processamento
     data1=$(date "+%d/%m/%Y %H:%M:%S")
-    echo "------------- END:" $data "-------------" >> $nome_tabela_log.txt
-    echo >> $arquivo_original_log.txt
+    echo "------------- END:" $data1 "-------------" >> $nome_tabela"_log.txt"
 
 elif [ $diretorio == 'empty' ]; then
 
@@ -44,6 +44,6 @@ elif [ $diretorio == 'empty' ]; then
 
     echo >> $nome_tabela"_log.txt"
     echo "------------- END:" $data1 "-------------" >> $nome_tabela"_log.txt"
-fi
 
+fi
 }
