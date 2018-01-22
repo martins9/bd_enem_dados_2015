@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from t_funcoes.script_estrutura import deletar_arquivo,renomear,criar_diretorio
+import os
 
 arquivoentrada = open('microdados_enem_2015_1.csv', 'r')
 arquivosaida = open('t_candidato_2015_1.csv', 'w')
@@ -17,10 +17,6 @@ for linha in arquivoentrada:
 arquivoentrada.close()
 arquivosaida.close()
 
-# Deletar arquivo
-#arquivo='t_candidato_2015_1.csv'
-#deletar_arquivo(arquivo)
-
 # Criar um diretorio
-diretorio='t_candidato_2015'
-criar_diretorio(diretorio)
+if not os.path.exists("t_candidato_2015"):
+        os.makedirs("t_candidato_2015")
