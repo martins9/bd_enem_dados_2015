@@ -1,20 +1,32 @@
 #!/usr/bin/env bash
 
-#python t_candidato_2015.py
+# Executando a extracao de dados
+python t_candidato_2015.py
 
-# Colocando null
-#sed 's/,,/,null,/g' t_candidato_2015_1.csv > t_candidato_2015_2.csv
+sed 's/, /,null/g' t_candidato_2015_1.csv > t_candidato_2015_2.csv
+sed 's/,,/,null,/g' t_candidato_2015_2.csv > t_candidato_2015_final.csv
 
-# Pegando o caminho
+# Removendo arquivo
+rm t_candidato_2015_1.csv
+rm t_candidato_2015_2.csv
+
+# Caminho
 path1=$(pwd)
 
-# Subindo um nivel na hierarquia
-cd ..
+# Fazendo o load para a tabela
+pasta="t_candidato_2015"
+nome_tabela="candidato"
+arquivo_original="t_candidato_2015_final.csv"
+source /home/martins/Documentos/bd_enem_dados_2015/t_funcoes_shell/t_func_split.sh
+split_arquivo $path1 $pasta $nome_tabela $arquivo_original
 
-# Chamando a funcao split
-source ./t_funcoes_shell/t_func_split.sh && arq_original=$path1/microdados_enem_2015_1.csv && diretorio=t_candidato_2015 \
-&& arq_final=t_candidato_2015_ && split_arquivo $path1 $diretorio $arq_original $pasta $arq_final
+# Removendo arquivo
+rm t_candidato_2015_final.csv
 
 # Fazendo o load para a tabela
-sorce ./t_funcoes_shell/t_func_load.sh && diretorio=t_candidato_2015 && nome_tabela=candidato && arquivo_original= &&
-load_tabela $path1 $diretorio $arquivo_original $pasta $nome_tabela
+diretorio="t_candidato_2015"
+nome_tabela="candidato"
+arquivo_original="empty"
+arquivo_final="t_candidato_2015_"
+source /home/martins/Documentos/bd_enem_dados_2015/t_funcoes_shell/t_func_load.sh
+load_tabela $path1 $diretorio $nome_tabela $arquivo_original $arquivo_final
