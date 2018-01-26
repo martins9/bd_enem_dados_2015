@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
+import os
 
 from t_funcoes.script_limpeza import deletar_linha_zero
-from t_funcoes.deletar_arquivo import excluir_arquivo
 
 arquivoentrada = open('microdados_enem_2015.csv', 'r')
 arquivosaida = open('t_necessidades_especiais_2015.csv','w')
@@ -19,8 +19,8 @@ for linha in arquivoentrada:
 # Chamando a função para fazer a limpeza das linhas.
 deletar_linha_zero('t_necessidades_especiais_2015.csv')
 
-# Chamando a função para deletar o arquivo
-excluir_arquivo('t_necessidades_especiais_2015.csv')
+# Deletar arquivo
+os.remove('t_necessidades_especiais_2015.csv')
 
 arquivoentrada.close()
 arquivosaida.close()
