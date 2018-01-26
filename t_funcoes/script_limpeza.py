@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 
 # Função que deleta as linhas que contém todos os zeros.
-def deletar_linha_zero(a):
-    try:
-        arquivoentrada = open(a, 'r')
-        arquivosaida = open("t_necessidades_especiais_2015_final.csv", 'w')
 
-        # Lendo as linhas do arquivo
-        lines = arquivoentrada.readlines()
+def deletar_linha_zero(arquivo,frequencia):
+    try:
+        nome_arquivo = arquivo.split('.')
+        nome_novo = nome_arquivo[0] + '_' + frequencia + '.csv'
+
+        arquivoentrada = open(arquivo, 'r')
+        arquivosaida = open(nome_novo, 'w')
 
         # Lendo cada linha dentro arquivo e escrevendo linhas que não tenham zeros
-        for line in lines:
-            if not ",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" in line:
+        for line in arquivoentrada:
+            if ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0' not in line:
                 arquivosaida.write(line)
 
         arquivoentrada.close()
@@ -19,7 +20,6 @@ def deletar_linha_zero(a):
     except IOError as e:
         print 'Não foi possível abrir o arquivo'
         exit()
-
 
 def trocar_sigla(a):
     try:
@@ -161,10 +161,10 @@ def tirar_duas_virgulas(c):
         exit()
 
 
-def remover_parte_estranha(arquivo, parte_estranha,frequencia):
+def remover_parte_estranha(arquivo, parte_estranha, frequencia):
     try:
-        nome_arquivo=arquivo.split('.')
-        nome_novo=nome_arquivo[0]+'_'+frequencia+'.csv'
+        nome_arquivo = arquivo.split('.')
+        nome_novo = nome_arquivo[0] + '_' + frequencia + '.csv'
 
         arquivoentrada = open(arquivo, 'r')
         arquivosaida = open(nome_novo, 'w')
