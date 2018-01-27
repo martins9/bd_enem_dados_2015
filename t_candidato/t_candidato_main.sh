@@ -11,7 +11,7 @@ sed 's/,,/,null,/g' t_candidato_2015_3.csv > t_candidato_2015_final.csv
 path1=$(pwd)
 
 # Removendo arquivo
-rm t_candidato_2015_1.csv t_candidato_2015_2.csv t_candidato_2015_4.csv
+rm t_candidato_2015_1.csv t_candidato_2015_2.csv t_candidato_2015_3.csv
 
 # Fazendo o load para a tabela
 pasta="t_candidato_2015"

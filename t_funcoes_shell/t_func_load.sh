@@ -16,6 +16,9 @@ function load_tabela (){
     # Fazendo Load das tabelas
     for i in $(seq -f "%06g" 0 $QTD_ARQ1)
     do
+	# Inserindo um espaco antes
+	echo >> $nome_tabela"_log.txt"
+
         # Inserindo o nome do arquivo de load no log.txt
         echo $diretorio"_"$i >> $nome_tabela"_log.txt"
 
