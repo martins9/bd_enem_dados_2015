@@ -2,7 +2,7 @@
 
 # Função que deleta as linhas que contém todos os zeros.
 
-def deletar_linha_zero(arquivo,frequencia):
+def deletar_linha_zero(arquivo, frequencia):
     try:
         nome_arquivo = arquivo.split('.')
         nome_novo = nome_arquivo[0] + '_' + frequencia + '.csv'
@@ -20,6 +20,7 @@ def deletar_linha_zero(arquivo,frequencia):
     except IOError as e:
         print 'Não foi possível abrir o arquivo'
         exit()
+
 
 def trocar_sigla(a):
     try:
@@ -172,6 +173,30 @@ def remover_parte_estranha(arquivo, parte_estranha, frequencia):
         for linha in arquivoentrada:
             if parte_estranha not in linha:
                 arquivosaida.writelines(linha)
+
+        arquivoentrada.close()
+        arquivosaida.close()
+    except IOError as e:
+        print 'Não foi possível abrir o arquivo'
+        exit()
+
+
+def tirar_null(arquivo, frequencia):
+    try:
+        nome_arquivo = arquivo.split('.')
+        nome_novo = nome_arquivo[0] + '_' + frequencia + '.csv'
+
+        arquivoentrada = open(arquivo, 'r')
+        arquivosaida = open(nome_novo, 'w')
+
+        for linha in arquivoentrada:
+            texto = linha.split(",")
+
+            # Pegando os dados dados somente que nao tiver '\n' no texto[3]
+            if texto[3] != '\n':
+                arquivosaida.writelines(texto[0] + "," + texto[1] + "," + texto[2] + "," + texto[3])
+            else:
+                continue
 
         arquivoentrada.close()
         arquivosaida.close()

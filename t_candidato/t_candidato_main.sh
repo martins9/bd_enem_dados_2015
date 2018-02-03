@@ -13,7 +13,7 @@ path1=$(pwd)
 # Removendo arquivo
 rm t_candidato_2015_1.csv t_candidato_2015_2.csv t_candidato_2015_3.csv
 
-# Fazendo o load para a tabela
+# Fazendo split do arquivo
 pasta="t_candidato_2015"
 arquivo_original="t_candidato_2015_final.csv"
 arq_final="t_candidato_2015_"
