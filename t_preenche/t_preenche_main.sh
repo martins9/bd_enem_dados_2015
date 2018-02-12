@@ -12,6 +12,9 @@ python t_preenche_2015_2.py
 # Excluindo os arquivos
 rm t_preenche_2015.csv t_preenche_2015_1.csv
 
+# Caminho
+path1=$(pwd)
+
 # Fazendo o load para a tabela
 pasta="t_preenche_2015"
 arquivo_original="t_preenche_2015_final.csv"
