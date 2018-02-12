@@ -5,8 +5,8 @@ import os
 arquivoentrada = open('t_preenche_2015_1.csv', 'r')
 arquivosaida = open ('t_preenche_2015_final.csv', 'w')
 
-if not os.path.exists("t_preenche"):
-        os.makedirs("t_preenche")
+if not os.path.exists("t_preenche_2015"):
+        os.makedirs("t_preenche_2015")
 
 
 for linha in arquivoentrada:
