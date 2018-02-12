@@ -193,8 +193,8 @@ def tirar_null(arquivo, frequencia):
             texto = linha.split(",")
 
             # Pegando os dados dados somente que nao tiver '\n' no texto[3]
-            if texto[3] != '\n':
-                arquivosaida.writelines(texto[0] + "," + texto[1] + "," + texto[2] + "," + texto[3])
+            if texto[2] != '\n':
+                arquivosaida.writelines(texto[0] + "," + texto[1] + "," + texto[2])
             else:
                 continue
 
