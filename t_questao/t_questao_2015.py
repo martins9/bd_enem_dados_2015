@@ -1,5 +1,5 @@
-arquivoentrada = open("microdados_enem_2015_1.csv", "r")
-arquivosaida = open("resultado.csv", "w")
+arquivoentrada = open("t_questao_2015.csv", "r")
+arquivosaida = open("t_questao_2015_1.csv", "w")
 
 for i in arquivoentrada:
     linha = i.split(",")
