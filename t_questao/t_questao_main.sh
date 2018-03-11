@@ -53,4 +53,4 @@ python t_questao_2015_1.py
 sed '/^$/d' resultado_2.csv  > resultado_3.csv
 
 # Deletando arquivos
-rm resultado_1.cs
+rm resultado_1.csv
