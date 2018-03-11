@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-arquivo1 = open('resultado_1.csv', 'r')
-arquivo2 = open('resultado_2.csv', 'w')
+arquivo1 = open("t_questao_2015_2.csv", "r")
+arquivo2 = open("t_questao_2015_3.csv", "w")
 
 z = 0
 y = 0
@@ -31,12 +31,12 @@ for line in arquivo1:
     elif (p[0] == '239' or p[0] == '240' or p[0] == '241' or p[0] == '242' or p[0] == '253' or p[0] == '279' or
           p[0] == '280' or p[0] == '281' or p[0] == '282'):  # Prova de LC
         for i in range(91, 136):
-            if (i <= 95):
+            if i <= 95:
                 b = '2015' + p[0] + str(i) + "," + p[k] + "," + p[l] + '\n'
                 arquivo2.writelines(b)
                 k = k + 1
                 l = l + 1
-            elif (i >= 96):
+            elif i >= 96:
                 b = '2015' + p[0] + str(i) + "," + p[m] + '\n'
                 arquivo2.writelines(b)
                 m = m + 1

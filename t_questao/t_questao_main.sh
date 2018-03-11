@@ -44,13 +44,29 @@ grep ,286, microdados_enem_2015.csv | grep 1,1,1,1 | grep -m1 -e [A-Z],1,[A-Z] -
 python t_questao_2015.py
 
 # Eliminando linhas brancos e codigos repetidos
-sed '/^$/d' resultado.csv | sort -u > resultado_1.csv
+sed '/^$/d' t_questao_2015_1.csv | sort -u > t_questao_2015_2.csv
+
+# Deletando arquivos
+rm t_questao_2015.csv t_questao_2015_1.csv
 
 # Extraindo dados do arquivo tratados
 python t_questao_2015_1.py
 
 # Eliminando as linhas brancos
-sed '/^$/d' resultado_2.csv  > resultado_3.csv
+sed '/^$/d' t_questao_2015_3.csv  > t_questao_2015_final.csv
+
+# Colocando no final de cada linha o "null", exceto linhas que contenham [A-Z],[A-Z]
+sed -i '/[A-Z],[A-Z]/!s/$/,null/' t_questao_2015_final.csv
 
 # Deletando arquivos
-rm resultado_1.csv
+rm t_questao_2015_2.csv t_questao_2015_3.csv
+
+# Pegando o caminho
+path1=$(pwd)
+
+# Fazendo o load para a tabela
+diretorio='empty'
+nome_tabela=questao
+arquivo_original=t_questao_2015_final.csv
+source /home/anacrl/microdados_enem_2015/t_funcoes_shell/t_func_load.sh
+load_tabela $path1 $diretorio $nome_tabela $arquivo_original
