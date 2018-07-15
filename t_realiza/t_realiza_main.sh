@@ -6,7 +6,7 @@ python t_realiza_2015.py
 # Caminho
 path1=$(pwd)
 
-# Fazendo o load para a tabela
+# Fazendo split do arquivo
 pasta="t_realiza_2015"
 arquivo_original="t_realiza_1.csv"
 arq_final="t_realiza_2015_"
